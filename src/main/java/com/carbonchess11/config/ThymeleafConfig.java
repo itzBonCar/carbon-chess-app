@@ -25,6 +25,8 @@ public class ThymeleafConfig {
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.setTemplateResolver(templateResolver());
+        engine.setEnableSpringELCompiler(true);
+        engine.setCacheManager(null); // Disable caching
         return engine;
     }
 

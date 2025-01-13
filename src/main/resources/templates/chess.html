@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <!-- <script>
+    <script>
         let selectedCell = null;
 
         // Function to handle selecting a piece
@@ -69,8 +69,15 @@
 
         // Function to fetch the current board state from the backend
         function fetchBoard() {
-            fetch("/chess/api/board")
-                .then(response => response.json())
+            fetch("/chess/api/board", {
+                method: "GET",
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     // Update the turn display
                     document.getElementById("turn").innerText = data.turn;
@@ -112,6 +119,6 @@
         document.addEventListener("DOMContentLoaded", () => {
             fetchBoard();
         });
-    </script> -->
+    </script>
 </body>
 </html>
