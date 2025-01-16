@@ -1,0 +1,28 @@
+# Ignore the target directory (where Maven build artifacts are placed)
+target/
+
+# Ignore Maven wrapper files
+.mvn/
+.mvnw
+.mvnw.cmd
+
+# Ignore IDE files (e.g., IntelliJ, VS Code)
+
+.vscode/
+
+
+# Ignore OS-specific files (e.g., macOS)
+
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+
+# Ignore Git-related files and folders
+.git/
+.gitignore
+.gitattributes
+
+# Others
