@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM maven:3.9.9-eclipse-temurin-19 AS build
+FROM maven:3.9.0-eclipse-temurin-19 AS build
 WORKDIR /app
 
 # Copy the entire project to the container
@@ -13,7 +13,7 @@ RUN mvn clean package -DskipTests && \
     rm -rf /tmp/*
 
 # Stage 2: Run the application on Tomcat
-FROM tomcat:10.1.0-jdk19
+FROM tomcat:10.1.34-jre17-temurin-noble
 WORKDIR /usr/local/tomcat
 
 # Remove default ROOT web app to avoid conflicts (optional)
